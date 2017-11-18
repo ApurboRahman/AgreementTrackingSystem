@@ -8,9 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3cb05f4c-540e-481c-b2ff-5027bb70e62a" name="Default" comment="Angular js">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/contractProposal.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/contractProposal.jsp" />
     </list>
     <ignored path="AgreementTrackingSystem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1281,9 +1279,16 @@
       <workItem from="1510799189716" duration="58000" />
       <workItem from="1510883517215" duration="1995000" />
       <workItem from="1510939115517" duration="1522000" />
-      <workItem from="1511018723022" duration="4280000" />
+      <workItem from="1511018723022" duration="4370000" />
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Angular js">
+      <created>1511028909660</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1511028909660</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers>
       <GitHub shared="true" url="https://github.com">
         <option name="assignedIssuesOnly" value="false" />
@@ -1304,7 +1309,7 @@
     </servers>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37921000" />
+    <option name="totallyTimeSpent" value="38011000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
