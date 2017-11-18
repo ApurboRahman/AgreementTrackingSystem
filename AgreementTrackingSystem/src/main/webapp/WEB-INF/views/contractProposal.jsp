@@ -12,7 +12,7 @@
     <title>contractProposal</title>
 </head>
 <body>
-<h1>You are about to propose a contract</h1>
+
 
 <form id="contractProposalForm"
       name="contractProposalForm"
@@ -24,7 +24,18 @@
       ng-class="page.formSubmitted?'submitted' : ''"
       ng-submit="save(contractProposalForm)"
       novalidate="">
-
+    <h1>You are about to propose a contract</h1>
+    <fieldset>
+        <legend>Contract Proposal Detials</legend>
+        <label>Agreement Types</label>
+        <input type="text"><br>
+        <label>Select Department</label>
+        <input type="text"><br>
+        <label>Select Party</label>
+        <input type="text">
+        <label>Select Additional Party</label>
+        <input type="text">
+    </fieldset>
 </form>
 
 <content>
