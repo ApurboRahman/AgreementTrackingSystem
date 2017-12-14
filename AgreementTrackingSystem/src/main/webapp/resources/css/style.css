@@ -1,0 +1,71 @@
+body {
+    margin: 0px;
+    background: lightskyblue;
+}
+
+.header-cont {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+}
+
+.header {
+    height: 50px;
+    background: #F0F0F0;
+    border: 1px solid #CCC;
+    width: 960px;
+    margin: 0px auto;
+}
+
+.content {
+    width: 960px;
+    background: #F0F0F0;
+    border: 1px solid #CCC;
+    height: 2000px;
+    margin: 20px auto;
+}
+
+legend {
+    padding: 0.2em 0.5em;
+    border: 1px solid green;
+    color: green;
+    font-size: 90%;
+    text-align: right;
+}
+
+label {
+    float: left;
+    width: 130px;
+    margin-right: 0.5em;
+    margin-bottom: -0.5em;
+    padding-top: 0.2em;
+    text-align: left;
+}
+
+fieldset {
+    font-family: sans-serif;
+    border: 5px solid #1F497D;
+    background: #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    width: 509px;
+}
+
+fieldset legend {
+    background: #1F497D;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 0 5px #ddd;
+    margin-left: 20px;
+}
+
+input[type=text] {
+    width: 200px;
+    /* display: block;*/
+    /*margin-bottom: 10px;*/
+    margin-bottom: 0.5em;
+    text-align: left;
+
+}

@@ -26,9 +26,11 @@
       novalidate="">
     <h1>You are about to propose a contract</h1>
     <fieldset>
-        <legend>Contract Proposal Detials</legend>
+        <legend>Contract Proposal Details</legend>
         <label>Agreement Types</label>
-        <input type="text"><br>
+        <input type="text"
+               ng-click="changeName()"
+               ng-model="agreementType"><br>
         <label>Select Department</label>
         <input type="text"><br>
         <label>Select Party</label>
