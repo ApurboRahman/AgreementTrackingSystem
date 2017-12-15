@@ -3,12 +3,13 @@
  */
 
 
-app.controller('contractProposalSetupCntrl', function ($scope) {
+/*angular.module('ats.cps').controller('contractProposalSetupCntrl', ['$scope', '$q', '$filter', 'contractProposalSetupService', function ($scope, $q, $filter, contractProposalSetupService) {*/
+angular.module('ats.cps').controller('contractProposalSetupCntrl', ['$scope', '$filter', '$q', 'contractProposalSetupService', function ($scope, $filter, $q, contractProposalSetupService) {
     $scope.agreementType = "John";
     $scope.changeName = function () {
         $scope.agreementType = "Nelly";
     };
-
+    console.log('cn');
     $scope.fillOnClick = function () {
         $scope.agreementType = "Govt Type";
         $scope.department = "department";
@@ -24,4 +25,4 @@ app.controller('contractProposalSetupCntrl', function ($scope) {
         alert("clear !!")
     }
 
-});
+}]);

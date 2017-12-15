@@ -32,7 +32,7 @@
         <label>Agreement Types</label>
         <input type="text"
                ng-click="changeName()"
-               ng-model="agreementType"
+               ng-model="agreementType | uppercase"
                ng-init="agreementType = 'agreement'"><br>
         <label>Select Department</label>
         <input type="text"
@@ -46,6 +46,7 @@
     </fieldset>
     <input type="button" value="fillUp" ng-click="fillOnClick()">
     <input type="button" value="Clear" ng-click="clearOnClick()">
+    <input type="button" value="getSomething" ng-click="getSomething()">
 
     <div w3-test-directive></div>
 </form>
@@ -56,10 +57,10 @@
     <script type="text/javascript" src="<c:url value='/resources/js/lib/ats_factory.js' />"></script>
     <script type="text/javascript" src="<c:url value='/resources/js/ats/cps/page.js' />"></script>
     <script type="text/javascript"
+            src="<c:url value='/resources/js/ats/cps/services/contractProposalSetupService.js' />"></script>
+    <script type="text/javascript"
             src="<c:url value='/resources/js/ats/cps/controllers/contractProposalSetupCntrl.js' />"></script>
-    <%-- <script type="text/javascript"
-             src="<c:url value='/resources/js/ats/cps/services/contractProposalSetupService.js' />"></script>
-    --%>
+
 </content>
 </body>
 </html>
