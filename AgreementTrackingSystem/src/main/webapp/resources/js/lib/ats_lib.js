@@ -157,4 +157,74 @@ atsGlobal = (function () {
         return str.replace(/\s+/g, ' ');
 
     }
+
+    function maskContactID(contactID) {
+        if (contactID) {
+            var splittedContactID = contactID.split('.');
+            switch (splittedContactID.length) {
+                case 1:
+                    if (splittedContactID[0].length == 13) {
+                        return splittedContactID.slice(0, 4) + '.' + splittedContactID[0].slice(4, 14);
+                    }
+                    if (splittedContactID[0].length >= 1 && splittedContactID[0].length <= 9) {
+                        return currentUser.branchCode + '.' + _zeroLeftPad(splittedContactID[0], 9);
+                    }
+                    break;
+                case 2:
+                    if ((splittedContactID[0].length >= 4) &&
+                        (splittedContactID[0].length >= 1 && splittedContactID[0].length <= 9)) {
+                        return splittedContactID[0] + '.' + _zeroLeftPad(splittedContactID[1], 9);
+                    }
+                    break;
+                default :
+                    return undefined;
+            }
+            return undefined;
+        }
+    }
+
+    function maskFinancialGL(financialGL) {
+        if (financialGL) {
+            var splittedFinancialGL = financialGL.split('.');
+            switch (splittedFinancialGL.length) {
+                case 1:
+                    if ((splittedFinancialGL[0].slice(0, 1) === '0') &&
+                        (splittedFinancialGL[0].length >= 1 && splittedFinancialGL[0].length <= 13)) {
+                        return currentUser.branchCode + '.' + _zeroRightPad(splittedFinancialGL[0], 13)
+                    }
+                    if (splittedFinancialGL[0].length == 13) {
+                        return splittedFinancialGL[0].slice(0, 4) + '.' +
+                            _zeroRightPad(splittedFinancialGL[0].slice(4, 17), 13);
+                    }
+                    break;
+                case 2:
+                    if ((splittedFinancialGL[0].length === 4) && (splittedFinancialGL[1].slice(0, 1) === '0') &&
+                        (splittedFinancialGL[1].length >= 1 && splittedFinancialGL[1].length <= 13)) {
+                        return splittedFinancialGL[0] + '.' + _zeroRightPad(splittedFinancialGL[1], 13);
+                    }
+                    break;
+                default:
+                    return undefined;
+            }
+            return undefined;
+        }
+    }
+
+    return {
+        baseUrl: baseUrl,
+        ajax: ajax,
+        valid: valid,
+        invalidForClient: invalidForClient,
+        maskContactID: maskContactID,
+        maskCustomerGL: maskFinancialGL,
+        maskFinancialGL: maskFinancialGL
+
+    };
 })();
+
+$(document).ready(
+    function () {
+        var submitted = false;
+
+    }
+);

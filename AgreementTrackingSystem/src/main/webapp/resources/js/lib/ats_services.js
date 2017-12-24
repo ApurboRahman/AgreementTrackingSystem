@@ -3,7 +3,7 @@
  */
 var app = angular.module('atsServices', []);
 
-app.factory('httpDataIntercept', ['$q', function ($q) {
+app.factory('httpDataInterceptor', ['$q', function ($q) {
     function checkStatus(statusCode) {
         switch (statusCode) {
             case 901:
@@ -49,7 +49,8 @@ app.config(['$httpProvider', function ($httpProvider) {
 app.service(
     'atsGlobalService', [function () {
         this.baseUrl = function () {
-            return window.location.protocol + '//' + window.location.host + '/ats.web';
+            return window.location.protocol + '//' + window.location.host + '/ats.web/';
+
         };
     }]
 );
@@ -92,11 +93,15 @@ app.service('formatService', [function () {
                 return atsGlobal.convertAmountInWord(data);
             }
         };
-        this.formatGlobalDate = function (data, returnAsDate) {
-            if (data) {
+        this.maskContactID = function (data) {
+            return atsGlobal.maskContactID(data);
+        };
+        this.maskFinancialGL = function (data) {
 
+            if (data) {
+                return atsGlobal.maskFinancialGL(data);
             }
-        }
+        };
     }]
 );
 app.service(

@@ -18,11 +18,11 @@ angular.module('ats.cps').controller('contractProposalSetupCntrl', ['$scope', '$
 
     };
     $scope.clearOnClick = function () {
-        $scope.agreementType = "";
-        $scope.department = "";
-        $scope.party = "";
-        $scope.adiParty = "";
-        alert("clear !!")
+    };
+    $scope.getSomething = function () {
+        contractProposalSetupService.getSomething().then(
+
+        );
     }
 
 }]);
