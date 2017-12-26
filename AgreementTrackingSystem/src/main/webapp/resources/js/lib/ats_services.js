@@ -49,7 +49,8 @@ app.config(['$httpProvider', function ($httpProvider) {
 app.service(
     'atsGlobalService', [function () {
         this.baseUrl = function () {
-            return window.location.protocol + '//' + window.location.host + '/ats.web/';
+            // return window.location.protocol + '//' + window.location.host + '/ats.web/';
+            return window.location.protocol + '//' + window.location.host + '/';
 
         };
     }]
