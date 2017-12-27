@@ -1,6 +1,9 @@
 package com.ats.controller.ats;
 
+import com.ats.helper.CustomResponseMessage;
 import com.ats.helper.DropdownDTO;
+import com.ats.helper.ResponseMessage;
+import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,6 +19,9 @@ import java.util.List;
 @RequestMapping(value = "/contractProposal")
 public class ContractProposal {
 
+    CustomResponseMessage customResponseMessage = new CustomResponseMessage();
+    ApplicationContext applicationContext;
+
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(HttpServletRequest request, HttpServletResponse response) {
         return "contractProposal";
@@ -27,6 +33,15 @@ public class ContractProposal {
     @RequestMapping(value = "/getSomething", method = RequestMethod.GET)
     public String getSomething(HttpServletRequest request, HttpServletResponse response) {
         return "contractProposal";
+
+
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/getSomething", method = RequestMethod.GET)
+    public ResponseMessage getNewLink(HttpServletRequest request, HttpServletResponse response) {
+
+        return customResponseMessage.toResponseMessage(applicationContext);
 
 
     }
