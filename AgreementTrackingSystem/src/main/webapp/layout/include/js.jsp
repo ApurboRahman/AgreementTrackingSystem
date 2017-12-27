@@ -4,7 +4,8 @@
 <script type="text/javascript" src="<c:url value="/resources/js/vendor/bootstrap.min.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/resources/js/vendor/alertify.min.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/resources/js/vendor/jsTree/jstree.min.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/resources/js/vendor/zTree/jquery.ztree.core-3.5.min.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/vendor/angular/loading-bar.js"/>"></script>
+
 <script type="text/javascript"
         src="<c:url value="/resources/js/vendor/dataTable/dataTables.bootstrap.min.js"/>"></script>
 <script type="text/javascript"

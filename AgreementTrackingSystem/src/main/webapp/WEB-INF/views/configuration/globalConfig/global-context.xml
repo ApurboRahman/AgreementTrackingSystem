@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns="http://www.springframework.org/schema/beans" default-lazy-init="true"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/spring-aop.xsd ">
+
+    <beans profile="web">
+        <bean id="currentUser" class="com.ats.helper.CurrentUser" scope="request"></bean>
+        <bean id="customResponseMessage" class="com.ats.helper.CustomResponseMessage" scope="request">
+            <aop:scoped-proxy/>
+        </bean>
+        <bean id="responseMessage" class="com.ats.helper.ResponseMessage"/>
+    </beans>
+</beans>

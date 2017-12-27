@@ -14,7 +14,7 @@ public class ResponseMessage {
 
     private Integer status;
     private String text;
-    private Objects DTO;
+    private Object DTO;
     private String value;
 
     private String cmdFlag;
@@ -39,11 +39,11 @@ public class ResponseMessage {
         this.text = text;
     }
 
-    public Objects getDTO() {
+    public Object getDTO() {
         return DTO;
     }
 
-    public void setDTO(Objects DTO) {
+    public void setDTO(Object DTO) {
         this.DTO = DTO;
     }
 

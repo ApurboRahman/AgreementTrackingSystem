@@ -50,11 +50,12 @@
 
     <div w3-test-directive></div>
 
-    <script async defer id='2017121942019910'
-            src='https://widgets.worldtimeserver.com/Public.ashx?rid=2017121942019910&theme=Analog&action=clock&wtsid=BD&hex=ff9900&city=Dhaka&size=small'></script>
+    <%--  <script async defer id='2017121942019910'
+              src='https://widgets.worldtimeserver.com/Public.ashx?rid=2017121942019910&theme=Analog&action=clock&wtsid=BD&hex=ff9900&city=Dhaka&size=small'></script>
 
-    <script async defer id='201712194292708'
-            src='https://widgets.worldtimeserver.com/Public.ashx?rid=201712194292708&theme=Digital&action=clock&wtsid=BD&hex=ff9900&city=Dhaka&size='></script>
+      <script async defer id='201712194292708'
+              src='https://widgets.worldtimeserver.com/Public.ashx?rid=201712194292708&theme=Digital&action=clock&wtsid=BD&hex=ff9900&city=Dhaka&size='></script>
+  --%>
 </form>
 
 

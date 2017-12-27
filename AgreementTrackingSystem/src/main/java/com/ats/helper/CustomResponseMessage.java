@@ -2,11 +2,10 @@ package com.ats.helper;
 
 import com.ats.approval.ApprovalPopupDTO;
 import org.springframework.context.ApplicationContext;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Created by md.rahman on 11/18/2017.
@@ -17,7 +16,7 @@ public class CustomResponseMessage {
     private Map<String, List<String>> hasMap;
 
     private ApprovalPopupDTO approvalPopupDTO;
-    private Objects DTO;
+    private Object DTO;
 
     private String cmdFlag;
     private String screenId;
@@ -101,12 +100,51 @@ public class CustomResponseMessage {
         this.hasMap = hasMap;
     }
 
-    public Objects getDTO() {
+    public Object getDTO() {
         return DTO;
     }
 
-    public void setDTO(Objects DTO) {
+    public void setDTO(Object DTO) {
         this.DTO = DTO;
+    }
+
+
+    public void addMessageCode(String messageCode) {
+        if (this.hasMap == null)
+            this.hasMap = new HashMap<String, List<String>>();
+
+        this.hasMap.put(messageCode, null);
+    }
+
+    public void addMessageCode(String messageCode, String... arguments) {
+        if (this.hasMap == null)
+            this.hasMap = new HashMap<String, List<String>>();
+        List<String> args = new ArrayList<String>();
+        for (String arg : arguments)
+            args.add(arg);
+        this.hasMap.put(messageCode, args);
+    }
+
+    public void addMessageCode(Map<String, List<String>> messageCodes) {
+        if (this.hasMap == null)
+            this.hasMap = new HashMap<String, List<String>>();
+
+        this.hasMap.putAll(messageCodes);
+    }
+
+    public void removeMessageCode(String messageCode) {
+        if (this.hasMap != null && !this.hasMap.isEmpty())
+            this.hasMap.remove(messageCode);
+    }
+
+    public String getMessageKey() {
+        StringBuilder messageKey = new StringBuilder();
+        Map<String, List<String>> errorMessageCodes = getHasMap();
+        for (Map.Entry<String, List<String>> entry : errorMessageCodes.entrySet()) {
+            String key = entry.getKey();
+            messageKey.append(key.toString());
+        }
+        return messageKey.toString();
     }
 
     public ResponseMessage toResponseMessage(ApplicationContext context) {
@@ -127,5 +165,69 @@ public class CustomResponseMessage {
 
         }
         return responseMessage;
+    }
+
+    public void Reset() {
+        if (hasMap != null)
+            hasMap.clear();
+    }
+
+    public boolean isMessageCodeExists(String messageCode) {
+        if (this.hasMap == null)
+            return false;
+        return this.hasMap.containsKey(messageCode);
+    }
+
+    public boolean isMessageEmpty() {
+        if (this.hasMap == null)
+            return true;
+        return this.hasMap.isEmpty();
+    }
+
+    public void addErrorMessage(String messageCode) {
+        this.status = 0;
+        if (this.hasMap == null) {
+            this.hasMap = new HashMap<String, List<String>>();
+        }
+    }
+
+    public void addSuccessCode() {
+        this.status = 1;
+    }
+
+    public void addSuccessMessage(Object dto) {
+        this.status = 1;
+        this.setDTO(dto);
+    }
+
+    public void addSuccessMessage(String messageCode) {
+        this.status = 1;
+        if (this.hasMap == null) {
+            this.hasMap = new HashMap<String, List<String>>();
+        }
+        this.hasMap.put(messageCode, null);
+    }
+
+    public void addSuccessMessage(String messageCode, Object dto) {
+        this.status = 1;
+        if (this.hasMap == null) {
+            this.hasMap = new HashMap<String, List<String>>();
+        }
+        this.hasMap.put(messageCode, null);
+        this.setDTO(dto);
+    }
+
+    public void addMessages(BindingResult result) {
+        for (ObjectError error : result.getAllErrors()) {
+            String messageCode = error.getDefaultMessage();
+            if (messageCode == null || messageCode.isEmpty()) {
+                messageCode = error.getCode();
+            }
+            if (messageCode != null || !messageCode.isEmpty()) {
+                addErrorMessage(messageCode);
+            }
+        }
+
+
     }
 }

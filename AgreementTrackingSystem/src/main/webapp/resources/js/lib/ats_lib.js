@@ -97,7 +97,7 @@ atsGlobal = (function () {
     }
 
     /*Responsible to show the warning message*/
-    function successMsg(msg, element) {
+    function warningMsg(msg, element) {
         alertify.warningAlert(msg).set({
             transition: 'zoom',
             onok: function () {
@@ -225,6 +225,40 @@ atsGlobal = (function () {
 $(document).ready(
     function () {
         var submitted = false;
+
+        alertify.dialog('errorAlert', function factory() {
+                return {
+                    build: function () {
+                        var errorHeader = '<span class="glyphicon glyphicon-exclamation-sign errorMsg gi-2x" ' +
+                            'style="vertical-align:middle;">' + '</span> Application Error';
+                        this.setHeader(errorHeader);
+                    }
+                };
+            }, true, 'alert'
+        );
+        alertify.dialog('successAlert', function factory() {
+                return {
+                    build: function () {
+                        var successHeader = '<span class="glyphicon glyphicon-exclamation-sign errorMsg gi-2x" ' +
+                            'style="vertical-align:middle;">' + '</span> Application Sucess';
+                        this.setHeader(successHeader);
+                    }
+                };
+            }, true, 'alert'
+        );
+
+
+        alertify.dialog('warningAlert', function factory() {
+                return {
+                    build: function () {
+                        var warningHeader = '<span class="glyphicon glyphicon-exclamation-sign errorMsg gi-2x" ' +
+                            'style="vertical-align:middle;">' + '</span> Application Sucess';
+                        this.setHeader(warningHeader);
+                    }
+                };
+            }, true, 'alert'
+        );
+
 
     }
 );

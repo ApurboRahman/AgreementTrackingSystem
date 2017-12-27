@@ -20,6 +20,8 @@
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml</file>
           <file>file://$MODULE_DIR$/src/main/java/com/ats/controller/AppConfigController.java</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/views/configuration/globalConfig/global-context.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/views/configuration/globalConfig/global-context.xml</file>
         </fileset>
       </configuration>
     </facet>
