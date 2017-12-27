@@ -38,7 +38,7 @@ public class ContractProposal {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/getSomething", method = RequestMethod.GET)
+    @RequestMapping(value = "/getNewLink", method = RequestMethod.GET)
     public ResponseMessage getNewLink(HttpServletRequest request, HttpServletResponse response) {
 
         return customResponseMessage.toResponseMessage(applicationContext);

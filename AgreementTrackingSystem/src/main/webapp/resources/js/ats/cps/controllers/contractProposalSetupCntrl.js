@@ -19,9 +19,29 @@ angular.module('ats.cps').controller('contractProposalSetupCntrl', ['$scope', '$
     };
     $scope.clearOnClick = function () {
     };
+
+
     $scope.getSomething = function () {
         contractProposalSetupService.getSomething().then(
+            function (res) {
+                if (res.status === 1) {
+                    console.log('success');
+                } else {
+                    console.log('fail');
+                }
+            }
+        );
+    };
 
+    $scope.getNewLink = function () {
+        contractProposalSetupService.getNewLink().then(
+            function (res) {
+                if (res.status === 1) {
+                    console.log('success');
+                } else {
+                    console.log('fail');
+                }
+            }
         );
     }
 
