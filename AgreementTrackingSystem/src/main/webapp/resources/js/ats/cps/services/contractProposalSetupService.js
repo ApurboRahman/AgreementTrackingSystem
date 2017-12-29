@@ -6,5 +6,14 @@ angular.module('ats.cps').service('contractProposalSetupService', ['$filter', 'a
     console.log('fs');
     this.getSomething = function () {
         return ajaxService.get(this.formUrl + '/getSomething');
+    };
+    this.getNewLink = function () {
+        return ajaxService.get(this.formUrl + '/getNewLink');
+    };
+
+    this.save = function () {
+        return ajaxService.post(this.formUrl + '/save');
     }
+
+
 }]);

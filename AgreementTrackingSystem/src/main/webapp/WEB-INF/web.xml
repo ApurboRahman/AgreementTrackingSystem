@@ -6,7 +6,7 @@
         id="WebApp_ID" version="2.5">
 
     <display-name>Agreement Tracking System</display-name>
-    <description>This system will manage agreement controll process</description>
+    <description>This system will manage agreement control process</description>
 
     <context-param>
         <param-name>spring.profiles.active</param-name>
@@ -32,9 +32,17 @@
         <servlet-name>mvc-dispatcher-servlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
-
+    <filter>
+        <filter-name>sitemesh</filter-name>
+        <filter-class>org.sitemesh.config.ConfigurableSiteMeshFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>sitemesh</filter-name>
+        <url-pattern>/help/*</url-pattern>
+    </filter-mapping>
 </web-app>

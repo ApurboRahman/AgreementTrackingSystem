@@ -119,7 +119,7 @@ app.service(
 
         this.post = function (url, data) {
             var token = $('input[name="_csrf"]').va();
-            return $http.pos(atsGlobalService.baseUrl() + url, data, {headers: {'X-CSRF-TOKEN': token}});
+            return $http.post(atsGlobalService.baseUrl() + url, data, {headers: {'X-CSRF-TOKEN': token}});
         };
     }]
 );

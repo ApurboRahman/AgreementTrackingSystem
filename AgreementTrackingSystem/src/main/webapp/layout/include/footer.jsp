@@ -5,12 +5,21 @@
   Time: 7:36 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
 
-</body>
-</html>
+<%@page import="java.util.ResourceBundle" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+<%
+  ResourceBundle resource = ResourceBundle.getBundle("env");
+  String version = resource.getString("VERSION");
+%>
+
+<footer class="container">
+  <div class="footerLogo">
+    <p>ats limited,version0.0.0.1 @copyright ats.com</p>
+
+  </div>
+  <div class="links">
+    <a href="">terms and conditions</a>
+    <a href="">privacy Policy</a>
+  </div>
+</footer>

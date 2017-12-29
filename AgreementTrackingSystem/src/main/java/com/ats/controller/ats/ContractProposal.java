@@ -1,5 +1,7 @@
 package com.ats.controller.ats;
 
+import com.ats.BaseConfiguration.baseController.BaseController;
+import com.ats.helper.CurrentUser;
 import com.ats.helper.CustomResponseMessage;
 import com.ats.helper.DropdownDTO;
 import com.ats.helper.ResponseMessage;
@@ -17,10 +19,8 @@ import java.util.List;
  * Created by Apurbo on 11/12/2017.
  */
 @RequestMapping(value = "/contractProposal")
-public class ContractProposal {
+public class ContractProposal extends BaseController {
 
-    CustomResponseMessage customResponseMessage = new CustomResponseMessage();
-    ApplicationContext applicationContext;
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(HttpServletRequest request, HttpServletResponse response) {
@@ -38,13 +38,21 @@ public class ContractProposal {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/getSomething", method = RequestMethod.GET)
+    @RequestMapping(value = "/getNewLink", method = RequestMethod.GET)
     public ResponseMessage getNewLink(HttpServletRequest request, HttpServletResponse response) {
-
+        customResponseMessage.setStatus(1);
         return customResponseMessage.toResponseMessage(applicationContext);
 
 
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    public ResponseMessage save(HttpServletRequest request, HttpServletResponse response) {
+        CurrentUser currentUser = getCurrentUser(request);
+        customResponseMessage.setStatus(1);
+        return customResponseMessage.toResponseMessage(applicationContext);
 
+
+    }
 }
