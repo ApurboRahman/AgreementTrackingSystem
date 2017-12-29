@@ -24,6 +24,13 @@
         <property name="order" value="1"/>
 
     </bean>
+    <bean id="baseController" class="com.ats.BaseConfiguration.baseController.BaseController">
+        <property name="customResponseMessage" ref="customResponseMessage"/>
+    </bean>
     <bean id="homeController" class="com.ats.controller.configurationController.HomeController"></bean>
-    <bean id="contractProposalController" class="com.ats.controller.ats.ContractProposal"></bean>
+
+    <bean id="contractProposalController" class="com.ats.controller.ats.ContractProposal"
+          parent="baseController"></bean>
+
+    <import resource="views/configuration/globalConfig/global-context.xml"/>
 </beans>

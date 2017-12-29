@@ -98,4 +98,24 @@ public class DropdownDTO {
     public void setValueBigDecimal(BigDecimal valueBigDecimal) {
         this.valueBigDecimal = valueBigDecimal;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        DropdownDTO that = (DropdownDTO) o;
+
+        if (text != null ? !text.equals(that.text) : that.text != null) return false;
+        if (value != null ? !value.equals(that.value) : that.value != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = text != null ? text.hashCode() : 0;
+        result = 31 * result + (value != null ? value.hashCode() : 0);
+        return result;
+    }
 }
