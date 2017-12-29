@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns:mvc="http://www.springframework.org/schema/mvc"
-       xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns="http://www.springframework.org/schema/beans"
 
        xsi:schemaLocation="http://www.springframework.org/schema/mvc
        http://www.springframework.org/schema/mvc/spring-mvc.xsd
@@ -29,7 +29,7 @@
     </bean>
     <bean id="homeController" class="com.ats.controller.configurationController.HomeController"></bean>
 
-    <bean id="contractProposalController" class="com.ats.controller.ats.ContractProposal"
+    <bean id="contractProposalController" class="com.ats.controller.ats.ContractProposalController"
           parent="baseController"></bean>
 
     <import resource="views/configuration/globalConfig/global-context.xml"/>

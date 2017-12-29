@@ -29,7 +29,7 @@
     </bean>
     <bean id="homeController" class="com.ats.controller.configurationController.HomeController"></bean>
 
-    <bean id="contractProposalController" class="com.ats.controller.ats.ContractProposal"
+    <bean id="contractProposalController" class="com.ats.controller.ats.ContractProposalController"
           parent="baseController"></bean>
 
     <import resource="views/configuration/globalConfig/global-context.xml"/>
