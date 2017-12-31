@@ -38,13 +38,15 @@ angular.module('ats.cps').controller('contractProposalSetupCntrl', ['$scope', '$
     $scope.clearOnClick = function () {
     };
     $scope.getSomething = function () {
-        contractProposalSetupService.getSomething().then(
+        var testData = 'test';
+        contractProposalSetupService.getSomething(testData).then(
             function (res) {
-                if (res.data.status === 1) {
+                console.log("1");
+                /*if (res.data.status === 1) {
                     console.log("1");
                 } else {
                     console.log("wrong");
-                }
+                 }*/
             }
         );
     };
@@ -54,8 +56,10 @@ angular.module('ats.cps').controller('contractProposalSetupCntrl', ['$scope', '$
             function (res) {
                 if (res.data.status === 1) {
                     console.log("1");
+                    successMsg(res.data.text);
                 } else {
                     console.log("wrong");
+                    errorMsg(res.data.text);
                 }
             }
         );

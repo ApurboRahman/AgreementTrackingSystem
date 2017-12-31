@@ -19,7 +19,8 @@ app.factory('httpDataInterceptor', ['$q', function ($q) {
                 errorMsg("Bad Request -400");
                 break;
             case 406:
-                window.location.href = atsGlobal.baseUrl() + "your customized message";
+                //window.location.href = atsGlobal.baseUrl() + "your customized message";
+                errorMsg("Bad Request -406");
                 break;
             //and so on you can add more if required;
         }
@@ -118,8 +119,29 @@ app.service(
         };
 
         this.post = function (url, data) {
-            var token = $('input[name="_csrf"]').va();
+            var token = $('input[name="_csrf"]').val();
             return $http.post(atsGlobalService.baseUrl() + url, data, {headers: {'X-CSRF-TOKEN': token}});
         };
     }]
 );
+
+function errorMsg(msg, element) {
+    alertify.errorAlert(msg).set({
+        transition: 'zoom',
+        onok: function () {
+            $("body").removeClass("ajs-no-overflow");
+        }
+    });
+
+
+}
+/*Responsible to show the success message*/
+function successMsg(msg, element) {
+    alertify.successAlert(msg).set({
+        transition: 'zoom',
+        onok: function () {
+            $("body").removeClass("ajs-no-overflow");
+        }
+    });
+}
+

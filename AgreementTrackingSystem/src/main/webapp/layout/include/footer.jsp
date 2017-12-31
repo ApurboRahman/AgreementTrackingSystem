@@ -8,10 +8,10 @@
 
 <%@page import="java.util.ResourceBundle" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
-<%
+<%--<%
   ResourceBundle resource = ResourceBundle.getBundle("env");
   String version = resource.getString("VERSION");
-%>
+%>--%>
 
 <footer class="container">
   <div class="footerLogo">

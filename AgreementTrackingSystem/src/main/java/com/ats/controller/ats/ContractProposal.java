@@ -31,15 +31,25 @@ public class ContractProposal extends BaseController {
 
     @ResponseBody
     @RequestMapping(value = "/getSomething", method = RequestMethod.GET)
-    public String getSomething(HttpServletRequest request, HttpServletResponse response) {
-        return "contractProposal";
+    public ResponseMessage getSomething(HttpServletRequest request, HttpServletResponse response, String testData) {
+        // return "contractProposal";
+        return customResponseMessage.toResponseMessage(applicationContext);
 
 
     }
 
+/*    @ResponseBody
+    @RequestMapping(value = "/getSomething", method = RequestMethod.GET)
+    public String getSomething(HttpServletRequest request, HttpServletResponse response,String testData) {
+        return "contractProposal";
+
+
+    }*/
+
     @ResponseBody
     @RequestMapping(value = "/getNewLink", method = RequestMethod.GET)
     public ResponseMessage getNewLink(HttpServletRequest request, HttpServletResponse response) {
+        customResponseMessage.addMessageCode("this is message");
         customResponseMessage.setStatus(1);
         return customResponseMessage.toResponseMessage(applicationContext);
 

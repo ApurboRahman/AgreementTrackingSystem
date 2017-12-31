@@ -4,8 +4,10 @@
 angular.module('ats.cps').service('contractProposalSetupService', ['$filter', 'ajaxService', function ($filter, ajaxService) {
     this.formUrl = "contractProposal";
     console.log('fs');
-    this.getSomething = function () {
-        return ajaxService.get(this.formUrl + '/getSomething');
+    this.getSomething = function (testData) {
+        return ajaxService.get(this.formUrl + '/getSomething', {
+            testData: testData
+        });
     };
     this.getNewLink = function () {
         return ajaxService.get(this.formUrl + '/getNewLink');
