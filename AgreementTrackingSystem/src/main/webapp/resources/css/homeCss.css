@@ -3,13 +3,19 @@ header, section, footer, aside, nav, article, figure, figcaption {
 }
 
 body {
+    /*    color: #333333;
+        font-family: verdana,"Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        line-height: 1.12854;
+        padding-top: 0px;*/
     color: #666666;
     background-color: #f9f8f6;
-    /* background-image: url("images/dark-wood.jpg");*/
+    /*  background-image: url("images/dark-wood.jpg");*/
     background-position: center;
     font-family: Georgia, times, serif;
     line-height: 1.4em;
     margin: 0px;
+
 }
 
 .wrapper {
@@ -189,13 +195,13 @@ label {
     font-weight: normal;
 }
 
-list {
+.list {
     color: gray;
     width: auto;
     position: absolute;
 }
 
-list li a {
+.list li a {
     color: #00699D;
     display: block;
     padding: 8px 16px;
@@ -257,15 +263,84 @@ input[type="select"] {
     padding-right: 21px;
 }
 
-.resizeContainer {
-
+#resizeContainer {
+    min-height: 470px;
 }
 
-.resizeBody {
-
-    margin-left: 280px;
+#resizeBody {
+    /*margin-left: 280px;*/
 }
 
+#resizeMenu {
+    z-index: 10;
+    height: 470px;
+}
+
+.alertify-inner li {
+    font-size: 13px;
+    font-weight: bold;
+    list-style: none outside none;
+    padding: 3px;
+    text-align: center;
+}
+
+.alertify-message {
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+}
+
+.alertify-inner p.error {
+    border: none !important;
+    color: red;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+}
+
+.alertify {
+    left: 50%;
+    margin-left: -275px;
+    opacity: 1;
+    position: fixed;
+    top: 35%;
+    width: 550px;
+    z-index: 99999;
+}
+
+.alertify-cover {
+    background-color: #000000;
+    bottom: 0;
+    left: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 99999;
+}
+
+.panel-group .panel {
+    border-radius: 0px 0px 0 0;
+    margin-bottom: -6px;
+    overflow: hidden;
+}
+
+.panel-heading {
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    padding: 10px 15px;
+}
+
+.panel-menu {
+    background-color: #F1F2F2;
+    border-bottom: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD;
+}
 .login {
     width: 460px;
     margin-top: 0px;
@@ -286,6 +361,7 @@ input[type="password"] {
 footer {
     font-size: 80%;
     padding: 7px 0px 0px 20px;
-    background: red; /* For browsers that do not support gradients */
+    background: #aed6f1; /* For browsers that do not support gradients */
+    height: 70px;
 
 }

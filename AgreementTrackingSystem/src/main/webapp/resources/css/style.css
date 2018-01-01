@@ -69,3 +69,22 @@ input[type=text] {
     text-align: left;
 
 }
+
+.panel-group .panel {
+    border-radius: 0px 0px 0 0;
+    margin-bottom: -6px;
+    overflow: hidden;
+}
+
+.panel-heading {
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    padding: 10px 15px;
+}
+
+.panel-menu {
+    background-color: #F1F2F2;
+    border-bottom: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD;
+}

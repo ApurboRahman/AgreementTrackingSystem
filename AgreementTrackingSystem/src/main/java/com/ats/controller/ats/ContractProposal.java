@@ -1,6 +1,7 @@
 package com.ats.controller.ats;
 
 import com.ats.BaseConfiguration.baseController.BaseController;
+import com.ats.dto.ContractProposalDTO;
 import com.ats.helper.CurrentUser;
 import com.ats.helper.CustomResponseMessage;
 import com.ats.helper.DropdownDTO;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -55,6 +57,25 @@ public class ContractProposal extends BaseController {
 
 
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/getContractList", method = RequestMethod.GET)
+    public ResponseMessage getContractList() {
+        ContractProposalDTO contractProposalDTO = new ContractProposalDTO();
+        contractProposalDTO.setSerialNo(1);
+        contractProposalDTO.setContractName("Road and bridge construction");
+        contractProposalDTO.setContractType("Government");
+        contractProposalDTO.setContractBody("LGED");
+        contractProposalDTO.setRemarks("Open");
+        List<ContractProposalDTO> proposalDTOList = new ArrayList<>();
+        proposalDTOList.add(contractProposalDTO);
+        customResponseMessage.setDTO(proposalDTOList);
+        customResponseMessage.setStatus(1);
+        return customResponseMessage.toResponseMessage(applicationContext);
+
+
+    }
+
 
     @ResponseBody
     @RequestMapping(value = "/save", method = RequestMethod.POST)

@@ -28,6 +28,28 @@ angular.module('ats.cps').controller('contractProposalSetupCntrl', ['$scope', '$
 
         }
     };
+    $scope.contractProposalDTO = {
+        serialNo: '',
+        contractName: '',
+        contractType: '',
+        contractBody: '',
+        remarks: '',
+        agreementType: '',
+        department: '',
+        party: '',
+        adiParty: '',
+        initialize: function (data) {
+            this.serialNo = data ? data.serialNo || '' : '';
+            this.contractName = data ? data.contractName || '' : '';
+            this.contractType = data ? data.contractType || '' : '';
+            this.contractBody = data ? data.contractBody || '' : '';
+            this.remarks = data ? data.remarks || '' : '';
+            this.agreementType = data ? data.agreementType || '' : '';
+            this.department = data ? data.department || '' : '';
+            this.party = data ? data.party || '' : '';
+            this.adiParty = data ? data.adiParty || '' : '';
+        }
+    };
     $scope.fillOnClick = function () {
         $scope.agreementType = "Govt Type";
         $scope.department = "department";
@@ -43,9 +65,9 @@ angular.module('ats.cps').controller('contractProposalSetupCntrl', ['$scope', '$
             function (res) {
                 console.log("1");
                 /*if (res.data.status === 1) {
-                    console.log("1");
-                } else {
-                    console.log("wrong");
+                 console.log("1");
+                 } else {
+                 console.log("wrong");
                  }*/
             }
         );
@@ -64,6 +86,22 @@ angular.module('ats.cps').controller('contractProposalSetupCntrl', ['$scope', '$
             }
         );
     };
+
+    $scope.contractList = [];
+    $scope.getContractList = function () {
+        contractProposalSetupService.getContractList().then(
+            function (res) {
+                if (res.data.status === 1) {
+                    $scope.contractList = res.data.dto;
+                    console.log($scope.contractList);
+                } else {
+                    console.log("wrong");
+                    errorMsg(res.data.text);
+                }
+            }
+        );
+    };
+    $scope.getContractList();
 
     $scope.save = function (form) {
         $scope.page.formSubmitted = true;

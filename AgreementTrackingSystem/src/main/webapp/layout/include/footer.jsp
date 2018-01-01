@@ -13,13 +13,15 @@
   String version = resource.getString("VERSION");
 %>--%>
 
-<footer class="container">
-  <div class="footerLogo">
-    <p>ats limited,version0.0.0.1 @copyright ats.com</p>
+<footer>
+    <div class="container">
+        <div class="footerLogo">
+            <p>ats limited,version0.0.0.1 @copyright ats.com</p>
 
-  </div>
-  <div class="links">
-    <a href="">terms and conditions</a>
-    <a href="">privacy Policy</a>
-  </div>
+        </div>
+        <div class="links">
+            <a href="">terms and conditions</a>
+            <a href="">privacy Policy</a>
+        </div>
+    </div>
 </footer>

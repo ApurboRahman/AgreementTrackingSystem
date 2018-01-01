@@ -9,8 +9,14 @@ angular.module('ats.cps').service('contractProposalSetupService', ['$filter', 'a
             testData: testData
         });
     };
+
+
     this.getNewLink = function () {
         return ajaxService.get(this.formUrl + '/getNewLink');
+    };
+
+    this.getContractList = function () {
+        return ajaxService.get(this.formUrl + '/getContractList');
     };
 
     this.save = function () {

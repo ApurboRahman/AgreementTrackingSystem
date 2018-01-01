@@ -13,7 +13,6 @@
 </head>
 <body>
 
-
 <form id="contractProposalForm"
       name="contractProposalForm"
       method="POST"
@@ -42,6 +41,32 @@
         <label>Select Additional Party</label>
         <input type="text" w3-test-directive
                ng-model="adiParty">
+    </fieldset>
+
+    <fieldset>
+        <legend>Contract List</legend>
+        <div class="col-md-12 datagrid">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Serial No</th>
+                    <th>Contract Name</th>
+                    <th>Contract Type</th>
+                    <th>Contract Body</th>
+                    <th>Remarks</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="row-selectable" ng-repeat="row in contractList">
+                    <td>{{row.serialNo}}</td>
+                    <td>{{row.contractName}}</td>
+                    <td>{{row.contractType}}</td>
+                    <td>{{row.contractBody}}</td>
+                    <td>{{row.remarks}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </fieldset>
     <input type="button" value="fillUp" ng-click="fillOnClick()">
     <input type="button" value="Clear" ng-click="clearOnClick()">

@@ -13,5 +13,4 @@
 <link rel="stylesheet" href="<c:url value='/resources/css/datepicker.css'/>"/>
 <link rel="stylesheet" href="<c:url value='/resources/css/loading-bar.css'/>"/>
 <link rel="stylesheet" href="<c:url value='/resources/css/style.css'/>"/>
-<%--
-<link rel="stylesheet" href="<c:url value='/resources/css/homeCss.css'/>"/>--%>
+<link rel="stylesheet" href="<c:url value='/resources/css/homeCss.css'/>"/>
