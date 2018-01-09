@@ -12,9 +12,10 @@ body {
     background-color: #f9f8f6;
     /*  background-image: url("images/dark-wood.jpg");*/
     background-position: center;
-    font-family: Georgia, times, serif;
+    font-family: verdana, Helvetica, Arial, sans-serif;
     line-height: 1.4em;
     margin: 0px;
+    font-size: 12px
 
 }
 
@@ -165,16 +166,24 @@ form fieldset {
 }
 
 form fieldset legend {
-    color: #384313;
-    font-size: 16px;
+    background-image: url("../images/dataTables/sort_asc.png");
+    background-position: 5px 1px;
+    background-repeat: no-repeat;
+    color: #6E6E6E;
+    margin-left: 5px;
+    padding-left: 25px;
+    padding-right: 10px;
     font-weight: bold;
-    padding-bottom: 10px;
-    text-shadow: 0 1px 1px #c0d576;
-    width: auto;
-    border-bottom: none;
+    padding-top: 1px;
 
 }
 
+legend {
+    font-weight: normal;
+    background-image: none;
+    padding-left: 0px;
+    padding-right: 0px;
+}
 /*form#payment > fieldset > legend:before {
     content: "Step " counter(fieldsets) ": ";
     counter-increment: fieldsets;
@@ -258,9 +267,18 @@ input[type="select"] {
 }
 
 .form-group {
-    margin-bottom: 10px;
-    float: left;
-    padding-right: 21px;
+    margin-bottom: 5px;
+    /* float: left;*/
+    margin-top: 5px;
+}
+
+.form-group label {
+    padding-top: 3px !important;
+    text-align: left;
+}
+
+.form-control, .btn {
+    font-size: 12px !important;
 }
 
 #resizeContainer {
@@ -341,6 +359,7 @@ input[type="select"] {
     border-bottom: 1px solid #DDDDDD;
     border-top: 1px solid #DDDDDD;
 }
+
 .login {
     width: 460px;
     margin-top: 0px;
@@ -364,4 +383,9 @@ footer {
     background: #aed6f1; /* For browsers that do not support gradients */
     height: 70px;
 
+}
+
+.v-no-padding {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
 }

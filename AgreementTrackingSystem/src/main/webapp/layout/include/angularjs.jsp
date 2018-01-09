@@ -16,6 +16,11 @@
                 src="<c:url value="/resources/js/vendor/validate/jquery.validate.min.js"/>"></script>
         <script type="text/javascript" src="<c:url value="/resources/js/vendor/alertify.min.js"/>"></script>
         <script type="text/javascript" src="<c:url value="/resources/js/vendor/angular/loading-bar.js"/>"></script>
+        <script type="text/javascript"
+                src="<c:url value="/resources/js/vendor/jqueryplugins/jquery.blockUI.js"/>"></script>
+        <script type="text/javascript"
+                src="<c:url value="/resources/js/vendor/jqueryplugins/jquery.i18n.properties.js"/>"></script>
+
         <script type="text/javascript" src="<c:url value="/resources/js/lib/ats_lib.js"/>"></script>
         <script type="text/javascript" src="<c:url value="/resources/js/lib/ats_services.js"/>"></script>
         <script type="text/javascript" src="<c:url value="/resources/js/lib/ats_directives.js"/>"></script>

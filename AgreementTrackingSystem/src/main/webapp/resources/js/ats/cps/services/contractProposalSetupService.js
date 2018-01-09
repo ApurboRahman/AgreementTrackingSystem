@@ -15,12 +15,19 @@ angular.module('ats.cps').service('contractProposalSetupService', ['$filter', 'a
         return ajaxService.get(this.formUrl + '/getNewLink');
     };
 
+
+    this.getOnSelectDropDownList = function (dropdownList) {
+        return ajaxService.get(this.formUrl + '/getOnSelectDropDownList', {
+            dropdownList: dropdownList
+        });
+    };
+
     this.getContractList = function () {
         return ajaxService.get(this.formUrl + '/getContractList');
     };
 
-    this.save = function () {
-        return ajaxService.post(this.formUrl + '/save');
+    this.save = function (data) {
+        return ajaxService.post(this.formUrl + '/save', data);
     }
 
 

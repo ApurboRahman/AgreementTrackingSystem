@@ -1,3 +1,7 @@
+* {
+    outline: none !important;
+}
+
 body {
     margin: 0px;
     background: lightskyblue;
@@ -26,11 +30,10 @@ body {
 }
 
 legend {
-    padding: 0.2em 0.5em;
-    border: 1px solid green;
-    color: green;
-    font-size: 90%;
-    text-align: right;
+    font-weight: normal;
+    background-image: none;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 label {
@@ -43,15 +46,14 @@ label {
 }
 
 fieldset {
-    font-family: sans-serif;
-    border: 5px solid #1F497D;
-    background: #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    width: 509px;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px 5px 5px 5px;
+    margin-top: 10px;
+    padding: 10px;
 }
 
-fieldset legend {
+/*fieldset legend {
     background: #1F497D;
     color: #fff;
     padding: 5px 10px;
@@ -59,7 +61,7 @@ fieldset legend {
     border-radius: 5px;
     box-shadow: 0 0 0 5px #ddd;
     margin-left: 20px;
-}
+}*/
 
 input[type=text] {
     width: 200px;

@@ -38,6 +38,8 @@ angular.module('ats.cps').controller('contractProposalSetupCntrl', ['$scope', '$
         department: '',
         party: '',
         adiParty: '',
+        dropdownList: '',
+        SelectDropdownList: '',
         initialize: function (data) {
             this.serialNo = data ? data.serialNo || '' : '';
             this.contractName = data ? data.contractName || '' : '';
@@ -48,13 +50,15 @@ angular.module('ats.cps').controller('contractProposalSetupCntrl', ['$scope', '$
             this.department = data ? data.department || '' : '';
             this.party = data ? data.party || '' : '';
             this.adiParty = data ? data.adiParty || '' : '';
+            this.dropdownList = data ? data.dropdownList || '' : '';
+            this.SelectDropdownList = data ? data.SelectDropdownList || '' : '';
         }
     };
     $scope.fillOnClick = function () {
-        $scope.agreementType = "Govt Type";
-        $scope.department = "department";
-        $scope.party = "party";
-        $scope.adiParty = "adiParty";
+        $scope.contractProposalDTO.agreementType = "Govt Type";
+        $scope.contractProposalDTO.department = "department";
+        $scope.contractProposalDTO.party = "party";
+        $scope.contractProposalDTO.adiParty = "adiParty";
 
     };
     $scope.clearOnClick = function () {
@@ -88,6 +92,8 @@ angular.module('ats.cps').controller('contractProposalSetupCntrl', ['$scope', '$
     };
 
     $scope.contractList = [];
+    $scope.getDropdownList = [];
+
     $scope.getContractList = function () {
         contractProposalSetupService.getContractList().then(
             function (res) {
@@ -103,6 +109,22 @@ angular.module('ats.cps').controller('contractProposalSetupCntrl', ['$scope', '$
     };
     $scope.getContractList();
 
+    $scope.getOnSelectDropDownList = function () {
+        if ($scope.contractProposalDTO.dropdownList) {
+            contractProposalSetupService.getOnSelectDropDownList($scope.contractProposalDTO.dropdownList).then(
+                function (res) {
+                    if (res.data.status === 1) {
+                        $scope.getDropdownList = res.data.dto;
+                    } else {
+                        console.log("wrong");
+                        errorMsg(res.data.text);
+                    }
+                }
+            );
+        }
+    };
+
+
     $scope.save = function (form) {
         $scope.page.formSubmitted = true;
         /*        if (form.$valid) {
@@ -111,13 +133,22 @@ angular.module('ats.cps').controller('contractProposalSetupCntrl', ['$scope', '$
         if ($scope.page.isSubmitted) {
             return;
         }
+        $scope.page.isSubmitted = true;
+        $scope.page.handleSaveButton = true;
+        $.blockUI();
+        contractProposalSetupService.save($scope.contractProposalDTO).then(
 
-        contractProposalSetupService.save().then(
             function (res) {
+                $.blockUI();
                 if (res.data.status === 1) {
                     console.log("save");
+                    successMsg(res.data.text);
                 }
             }
-        );
+        ).then(function () {
+                $.unblockUI();
+                $scope.page.isSubmitted = false;
+                $scope.page.handleSaveButton = false;
+            });
     }
 }]);

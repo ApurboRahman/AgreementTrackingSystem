@@ -13,6 +13,8 @@ public class ContractProposalDTO {
     private String department;
     private String party;
     private String adiParty;
+    private Integer dropdownList;
+    private Integer SelectDropdownList;
 
 
     public Integer getSerialNo() {
@@ -85,5 +87,21 @@ public class ContractProposalDTO {
 
     public void setAdiParty(String adiParty) {
         this.adiParty = adiParty;
+    }
+
+    public Integer getDropdownList() {
+        return dropdownList;
+    }
+
+    public void setDropdownList(Integer dropdownList) {
+        this.dropdownList = dropdownList;
+    }
+
+    public Integer getSelectDropdownList() {
+        return SelectDropdownList;
+    }
+
+    public void setSelectDropdownList(Integer selectDropdownList) {
+        SelectDropdownList = selectDropdownList;
     }
 }

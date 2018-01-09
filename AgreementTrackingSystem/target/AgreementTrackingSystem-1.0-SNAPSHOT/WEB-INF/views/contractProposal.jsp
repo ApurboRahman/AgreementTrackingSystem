@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>contractProposal</title>
@@ -24,23 +25,83 @@
       ng-submit="save(contractProposalForm)"
       novalidate="">
     <h1>You are about to propose a contract</h1>
-    <fieldset>
+    <fieldset class="v-no-padding">
         <legend>Contract Proposal Details</legend>
+        <div class="form-group">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label class="col-md-5">Agreement Types</label>
 
-        <label>Agreement Types</label>
-        <input type="text"
-               ng-click="changeName()"
-               ng-model="agreementType"
-               ng-init="agreementType = 'agreement'"><br>
-        <label>Select Department</label>
-        <input type="text"
-               ng-model="department"><br>
-        <label>Select Party</label>
-        <input type="text"
-               ng-model="party"><br/>
-        <label>Select Additional Party</label>
-        <input type="text" w3-test-directive
-               ng-model="adiParty">
+                            <div class="col-md-5">
+                                <input type="text" class="form-control"
+                                       ng-click="changeName()"
+                                       ng-model="contractProposalDTO.agreementType"
+                                       ng-init="agreementType = 'agreement'">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-5">Department</label>
+
+                            <div class="col-md-5">
+                                <input type="text" class="form-control"
+                                       ng-model="contractProposalDTO.department">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-5">Select Party</label>
+
+                            <div class="col-md-5">
+                                <input type="text" class="form-control"
+                                       ng-model="contractProposalDTO.party">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-5">Additional Party</label>
+
+                            <div class="col-md-5">
+                                <input type="text" w3-test-directive
+                                       class="form-control"
+                                       ng-model="contractProposalDTO.adiParty">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-5">Dropdown List</label>
+
+                            <div class="col-md-5">
+                                <form:select id="dropdownDTOList"
+                                        name="dropdownDTOList"
+                                        path="dropdownDTOList"
+                                        class="form-control"
+                                        ng-model="contractProposalDTO.dropdownList"
+                                        ng-change="getOnSelectDropDownList()">
+                                    <form:option value="" label="please select"></form:option>
+                                    <form:options items="${dropdownDTOList}"
+                                            itemValue="valueInteger"
+                                            itemLabel="text"></form:options>
+                                </form:select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-5">On select List</label>
+
+                            <div class="col-md-5">
+                                <select id="SelectDropdownList"
+                                             name="SelectDropdownList"
+                                             class="form-control"
+                                             ng-model="contractProposalDTO.SelectDropdownList"
+                                        ng-options="item.valueInteger as item.text for item in getDropdownList">
+                                    <option value=""> please select</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </fieldset>
 
     <fieldset>

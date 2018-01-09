@@ -22,5 +22,6 @@
 </form>
 
 <a href=" <c:url value="/contractProposal"/>">Department Setup</a>
+<a href=" <c:url value="/contractProposal"/>">Department Setup</a>
 </body>
 </html>

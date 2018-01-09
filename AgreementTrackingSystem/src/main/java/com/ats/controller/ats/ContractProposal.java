@@ -7,6 +7,7 @@ import com.ats.helper.CustomResponseMessage;
 import com.ats.helper.DropdownDTO;
 import com.ats.helper.ResponseMessage;
 import org.springframework.context.ApplicationContext;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,7 +26,17 @@ public class ContractProposal extends BaseController {
 
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public String index(HttpServletRequest request, HttpServletResponse response) {
+    public String index(HttpServletRequest request, HttpServletResponse response, Model model) {
+
+        List<DropdownDTO> dropdownDTOList = new ArrayList<>();
+
+        dropdownDTOList.add(new DropdownDTO("drop One", 1));
+        dropdownDTOList.add(new DropdownDTO("drop Two", 2));
+        dropdownDTOList.add(new DropdownDTO("drop Three", 3));
+        dropdownDTOList.add(new DropdownDTO("drop Four", 4));
+        dropdownDTOList.add(new DropdownDTO("drop Five", 5));
+        dropdownDTOList.add(new DropdownDTO("drop Six", 6));
+        model.addAttribute("dropdownDTOList", dropdownDTOList);
         return "contractProposal";
 
 
@@ -58,6 +69,26 @@ public class ContractProposal extends BaseController {
 
     }
 
+
+    @ResponseBody
+    @RequestMapping(value = "/getOnSelectDropDownList", method = RequestMethod.GET)
+    public ResponseMessage getOnSelectDropDownList(Integer dropdownList) {
+        List<DropdownDTO> dropdownDTOList = new ArrayList<>();
+
+        dropdownDTOList.add(new DropdownDTO("OnSelect One", 1));
+        dropdownDTOList.add(new DropdownDTO("OnSelect Two", 2));
+        dropdownDTOList.add(new DropdownDTO("OnSelect Three", 3));
+        dropdownDTOList.add(new DropdownDTO("OnSelect Four", 4));
+        dropdownDTOList.add(new DropdownDTO("OnSelect Five", 5));
+        dropdownDTOList.add(new DropdownDTO("OnSelect Six", 6));
+
+        customResponseMessage.setDTO(dropdownDTOList);
+        customResponseMessage.setStatus(1);
+        return customResponseMessage.toResponseMessage(applicationContext);
+
+
+    }
+
     @ResponseBody
     @RequestMapping(value = "/getContractList", method = RequestMethod.GET)
     public ResponseMessage getContractList() {
@@ -79,7 +110,7 @@ public class ContractProposal extends BaseController {
 
     @ResponseBody
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public ResponseMessage save(HttpServletRequest request, HttpServletResponse response) {
+    public ResponseMessage save(HttpServletRequest request, HttpServletResponse response, @RequestBody ContractProposalDTO contractProposalDTO) {
         CurrentUser currentUser = getCurrentUser(request);
         customResponseMessage.setStatus(1);
         return customResponseMessage.toResponseMessage(applicationContext);
