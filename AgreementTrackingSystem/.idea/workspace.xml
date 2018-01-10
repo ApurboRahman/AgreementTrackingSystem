@@ -7,7 +7,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cb05f4c-540e-481c-b2ff-5027bb70e62a" name="Default" comment="js and jsp updated with sitemesh, css changed">
+    <list default="true" id="3cb05f4c-540e-481c-b2ff-5027bb70e62a" name="Default" comment="Jsession id hide, web.xml changed">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -62,7 +62,7 @@
       <file leaf-file-name="web.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.70711297" vertical-offset="564" max-vertical-offset="1281">
+            <state vertical-scroll-proportion="0.7949791" vertical-offset="501" max-vertical-offset="1218">
               <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
               <folding />
             </state>
@@ -1325,7 +1325,7 @@
       <workItem from="1514865105230" duration="19669000" />
       <workItem from="1515487426143" duration="4619000" />
       <workItem from="1515569576621" duration="2090000" />
-      <workItem from="1515579061350" duration="4196000" />
+      <workItem from="1515579061350" duration="4259000" />
     </task>
     <task id="LOCAL-00001" summary="Angular js">
       <created>1511012696947</created>
@@ -1399,7 +1399,13 @@
       <option name="project" value="LOCAL" />
       <updated>1514808710774</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Jsession id hide, web.xml changed">
+      <created>1515584325758</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1515584325758</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers>
       <GitHub shared="false" url="https://github.com">
         <commitMessageFormat>{id} {summary}</commitMessageFormat>
@@ -1417,7 +1423,7 @@
     </servers>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="240919000" />
+    <option name="totallyTimeSpent" value="240982000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -1486,7 +1492,8 @@
     <MESSAGE value="correction of previous error, sitemesh, angular js method calling." />
     <MESSAGE value="List implemented, css upgrading, menu jsp and layout jsp updated" />
     <MESSAGE value="js and jsp updated with sitemesh, css changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="js and jsp updated with sitemesh, css changed" />
+    <MESSAGE value="Jsession id hide, web.xml changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Jsession id hide, web.xml changed" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1941,7 +1948,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.70711297" vertical-offset="564" max-vertical-offset="1281">
+        <state vertical-scroll-proportion="0.7949791" vertical-offset="501" max-vertical-offset="1218">
           <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
           <folding />
         </state>
