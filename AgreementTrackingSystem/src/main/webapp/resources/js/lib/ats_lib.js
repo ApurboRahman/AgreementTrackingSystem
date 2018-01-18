@@ -1,6 +1,16 @@
 /**
  * Created by md.rahman on 11/18/2017.
  */
+
+//region === Global Object Methods ===
+/*
+ * Responsible to initialize the controls
+ * */
+
+function controlInitialize() {
+    $('.datepicker').attr('maxlength', '12');
+}
+
 //region === asGlobal Object ===
 atsGlobal = (function () {
     "use strict";
