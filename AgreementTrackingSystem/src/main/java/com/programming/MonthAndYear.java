@@ -32,8 +32,32 @@ public class MonthAndYear {
         String date = "31-May-2017";
         Date dt = new Date(date);
         Integer month = 3;
-
+        Date date1 = new Date("31-May-2017");
         System.out.println(plusMonths(dt, month));
+
+
+        java.sql.Date nowDate2 = new java.sql.Date((new Date()).getTime());
+
+        SimpleDateFormat formatNowDay = new SimpleDateFormat("dd");
+        SimpleDateFormat formatNowMonth = new SimpleDateFormat("MM");
+        SimpleDateFormat formatNowYear = new SimpleDateFormat("YYYY");
+
+        String currentDay = formatNowDay.format(date1);
+        String currentMonth = formatNowMonth.format(date1);
+        String currentYear = formatNowYear.format(date1);
+
+        int day = Integer.valueOf(currentDay);
+        String currentYear2 = formatNowYear.format(nowDate2); // = '2006'
+
+        switch (day) {
+            case 1:
+            case 21:
+                formatNowYear = new SimpleDateFormat("dd MMMM, yyyy");
+                currentYear2 = formatNowYear.format(nowDate2).toUpperCase();
+
+                // currentYear2 = formatNowDay.format(nowDate2); // = '2006'
+        }
+
 
     }
 
