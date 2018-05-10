@@ -72,15 +72,15 @@
 
                             <div class="col-md-5">
                                 <form:select id="dropdownDTOList"
-                                        name="dropdownDTOList"
-                                        path="dropdownDTOList"
-                                        class="form-control"
-                                        ng-model="contractProposalDTO.dropdownList"
-                                        ng-change="getOnSelectDropDownList()">
+                                             name="dropdownDTOList"
+                                             path="dropdownDTOList"
+                                             class="form-control"
+                                             ng-model="contractProposalDTO.dropdownList"
+                                             ng-change="getOnSelectDropDownList()">
                                     <form:option value="" label="please select"></form:option>
                                     <form:options items="${dropdownDTOList}"
-                                            itemValue="valueInteger"
-                                            itemLabel="text"></form:options>
+                                                  itemValue="valueInteger"
+                                                  itemLabel="text"></form:options>
                                 </form:select>
                             </div>
                         </div>
@@ -89,9 +89,9 @@
 
                             <div class="col-md-5">
                                 <select id="SelectDropdownList"
-                                             name="SelectDropdownList"
-                                             class="form-control"
-                                             ng-model="contractProposalDTO.SelectDropdownList"
+                                        name="SelectDropdownList"
+                                        class="form-control"
+                                        ng-model="contractProposalDTO.SelectDropdownList"
                                         ng-options="item.valueInteger as item.text for item in getDropdownList">
                                     <option value=""> please select</option>
 
