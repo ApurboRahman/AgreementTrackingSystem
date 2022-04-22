@@ -32,7 +32,7 @@
     </build>
     <properties>
         <!--Spring-->
-        <spring-framework.verion>4.1.3.RELEASE</spring-framework.verion>
+        <spring-framework.verion>5.3.19</spring-framework.verion>
         <spring-framework-security.verion>4.1.3.RELEASE</spring-framework-security.verion>
         <jackson.version>2.6.3</jackson.version>
 
